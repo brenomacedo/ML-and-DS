@@ -1,4 +1,4 @@
-import pandas as pd
+import pandas as pd 
 import numpy as np
 
 base = pd.read_csv('credit_data.csv')
@@ -19,7 +19,9 @@ previsores = scaler.fit_transform(previsores)
 from sklearn.model_selection import train_test_split
 previsores_treinamento, previsores_teste, classe_treinamento, classe_teste = train_test_split(previsores, classe, test_size=0.25, random_state=0)
 
+from sklearn.ensemble import RandomForestClassifier
 
+classificador = RandomForestClassifier(n_estimators=40, criterion='entropy', random_state=0)
 
 classificador.fit(previsores_treinamento, classe_treinamento)
 previsoes = classificador.predict(previsores_teste)
