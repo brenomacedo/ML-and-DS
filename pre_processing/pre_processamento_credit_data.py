@@ -31,3 +31,5 @@ previsores[:, 0:3] = imputer.transform(previsores[:, 0:3])
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 previsores = scaler.fit_transform(previsores)
+
+from sklearn.
