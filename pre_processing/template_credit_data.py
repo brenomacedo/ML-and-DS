@@ -18,3 +18,18 @@ previsores = scaler.fit_transform(previsores)
 
 from sklearn.model_selection import train_test_split
 previsores_treinamento, previsores_teste, classe_treinamento, classe_teste = train_test_split(previsores, classe, test_size=0.25, random_state=0)
+
+
+##importação da biblioteca
+##criacao do classificador
+
+classificador.fit(previsores_treinamento, classe_treinamento)
+previsoes = classificador.predict(previsores_teste)
+
+from sklearn.metrics import accuracy_score, confusion_matrix
+
+precisao = accuracy_score(classe_teste, previsoes)
+matriz = confusion_matrix(classe_teste, previsoes)
+
+import collections
+collections.counter(classe_teste)
