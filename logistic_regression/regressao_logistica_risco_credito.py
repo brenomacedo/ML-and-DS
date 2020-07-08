@@ -18,3 +18,8 @@ classificador = LogisticRegression()
 classificador.fit(previsores, classe)
 
 print(classificador.intercept_)
+
+resultado = classificador.predict([[0,0,1,2],[3,0,0,0]])
+resultado2 = classificador.predict_proba([[0,0,1,2], [3,0,0,0]])
+
+print(resultado2)
