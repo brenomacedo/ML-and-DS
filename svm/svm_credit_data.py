@@ -21,7 +21,7 @@ previsores_treinamento, previsores_teste, classe_treinamento, classe_teste = tra
 
 
 from sklearn.svm import SVC
-classificador = SVC(kernel='linear',random_state=1)
+classificador = SVC(kernel='rbf',random_state=2)
 
 classificador.fit(previsores_treinamento, classe_treinamento)
 previsoes = classificador.predict(previsores_teste)
