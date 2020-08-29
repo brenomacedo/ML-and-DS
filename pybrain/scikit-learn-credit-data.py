@@ -20,8 +20,8 @@ from sklearn.model_selection import train_test_split
 previsores_treinamento, previsores_teste, classe_treinamento, classe_teste = train_test_split(previsores, classe, test_size=0.25, random_state=0)
 
 
-##importação da biblioteca
-##criacao do classificador
+from sklearn.neural_network import MLPClassifier
+classificador = MLPClassifier(verbose = True, max_iter=1000, tol=0.000010, solver='adam', hidden_layer_sizes=(100), activation='relu', batch_size=)
 
 classificador.fit(previsores_treinamento, classe_treinamento)
 previsoes = classificador.predict(previsores_teste)
