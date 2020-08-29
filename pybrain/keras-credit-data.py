@@ -28,7 +28,7 @@ classificador.add(Dense(units=2, activation='relu'))
 classificador.add(Dense(units=1, activation='sigmoid'))
 classificador.compile(optimizer = 'adam', loss='binary_crossentropy', metrics= ['accuracy'])
 
-classificador.fit(previsores_treinamento, classe_treinamento, batch_size = 10)
+classificador.fit(previsores_treinamento, classe_treinamento, batch_size = 10, epochs= 100)
 previsoes = classificador.predict(previsores_teste)
 previsoes = (previsoes > 0.5)
 
